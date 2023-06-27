@@ -38,6 +38,7 @@ const convertBreadcrumb = (
 
   if (replaceCharacterList) {
     for (let i = 0; i < replaceCharacterList.length; i++) {
+      console.log({ transformedTitle });
       transformedTitle = transformedTitle.replaceAll(
         replaceCharacterList[i].from,
         replaceCharacterList[i].to
@@ -45,8 +46,10 @@ const convertBreadcrumb = (
     }
   }
 
-  // decode for utf-8 characters and return ascii. 
-  return toUpperCase ? decodeURI(transformedTitle).toUpperCase() : decodeURI(transformedTitle);
+  // decode for utf-8 characters and return ascii.
+  return toUpperCase
+    ? decodeURI(transformedTitle).toUpperCase()
+    : decodeURI(transformedTitle);
 };
 
 export interface Breadcrumb {
